@@ -1,23 +1,15 @@
-int num = 150;
-float mx[] = new float[num];
-float my[] = new float[num];
-
 void setup() {
-  size(640, 480);
-  noStroke();
-  noFill(); 
+  size(1000, 400);
+  background(#EDEADA);
+  stroke(150);
 }
 
 void draw() {
-  background(0); 
-  strokeWeight(6);
-  stroke(random(150,255),random(150,255),random(150,255));
-int which = frameCount % num;
-  mx[which] = mouseX;
-  my[which] = mouseY;
-  
-  for (int i = 0; i < num; i++) {
-    int index = (which+1 + i) % num;
-    ellipse(mx[index], my[index], i, i);
+  for (int x =0; x<=400; x+=5) {
+    line(0, x, 200, x);
+    line(300,x,300+x,0);
+    line(700,x,300+x,400);
+    line(800,x,1000,200+x);
+    line(800+x,0,1000,200-x);
   }
-}
+}                          
